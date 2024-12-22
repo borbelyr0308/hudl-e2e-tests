@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "hudle:all": "npx playwright test"
+    "hudle:all": "npx playwright test",
+    "hudle:login": "npx playwright test --grep @auth",
+    "hudle:happy": "npx playwright test --grep @happy",
+    "hudle:negative": "npx playwright test --grep-invert @happy",
+    "debug": "npx playwright test --debug",
+    "ui": "npx playwright test --ui",
+    "codegen": "npx playwright codegen"
   },
   "keywords": [
     "Hudle", 

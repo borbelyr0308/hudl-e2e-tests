@@ -49,7 +49,7 @@ export class HudleHomePage {
         await this.allowAll.click();
     }
 
-    async verifyLoginPageComponents(page: Page) {
+    async verifyLoginPageComponents() {
         await expect(this.homeTitle).toBeVisible();
         await expect(this.banner).toBeVisible();
         await expect(this.contactUs).toBeVisible();
@@ -61,7 +61,7 @@ export class HudleHomePage {
         await expect(this.supportLink).toBeVisible();
     }
 
-    async gotoLogin(page: Page) {
+    async gotoLogin() {
         await this.loginLink.click();
     }
 }

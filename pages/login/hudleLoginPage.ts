@@ -45,6 +45,11 @@ export class HudleLoginPage {
         await page.getByRole('button', { name: 'Continue' }).click();
     }
 
+    async validLogin(page: Page) {
+        await this.enterEmail(page, 'borbelyr@yahoo.com'); // All credentials (valid or invalid) to go into secrets
+        await this.enterPassword(page, 'PuNP-m!u!2AF&A?');
+    }
+
     async enterEmail(page: Page, email: string) {
         await page.getByLabel('Email').click();
         await page.getByLabel('Email').fill(email);
