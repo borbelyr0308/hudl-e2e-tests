@@ -1,3 +1,23 @@
+# Test suite for Hudle Login tests (Extendable for future Hudle tests)
+Tech Stack:
+ - TypeScript
+ - Playwright
+ - HTML test report
+
+Design Pattern:
+ - Page Object Model
+    - Areas of contention:
+        * Page Object Model is actually an anti-pattern, that encourages the dev/tester to 
+          think of everything as a 'page' and therefore every test as a UI test. This is 
+          undesirable, because of course tests could be API tests, Load tests, Contract tests etc.
+        * Page Object 'classes' are in fact not classes, because the instance variables are non-mutable, 
+          so the state of Page Objects never changes. They are more like namespaces; a convenient place to 
+          house certain logical properties.
+    - Positive reasons to still use POM:
+        * Reusable Page Objects that simplify tests, and (arguably) ease maintenance.
+        * It's a useful tool to train manual QA's to start doing automation in a somewhat organised fashion.
+        * All automation engineers are familiar with it, and so can quickly add tests in a suite that utilises it.
+
 # SETUP
 
 ## Install dependencies:

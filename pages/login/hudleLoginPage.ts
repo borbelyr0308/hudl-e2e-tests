@@ -1,4 +1,5 @@
 import { Locator, Page, expect } from "@playwright/test";
+import 'dotenv/config';
 
 /**
  * Hudle Login page.
@@ -40,14 +41,14 @@ export class HudleLoginPage {
     }
 
     async invalidLogin(page: Page) {
-        await this.enterEmail(page, 'not@valid.test.com');
-        await this.enterPassword(page, 'notMyPassword');
+        await this.enterEmail(page, process.env.INVALID_USERNAME || '');
+        await this.enterPassword(page, process.env.INVALID_PASSWORD || '');
         await page.getByRole('button', { name: 'Continue' }).click();
     }
 
     async validLogin(page: Page) {
-        await this.enterEmail(page, 'borbelyr@yahoo.com'); // All credentials (valid or invalid) to go into secrets
-        await this.enterPassword(page, 'PuNP-m!u!2AF&A?');
+        await this.enterEmail(page, process.env.VALID_USERNAME || '');
+        await this.enterPassword(page, process.env.VALID_PASSWORD || '');
     }
 
     async enterEmail(page: Page, email: string) {

@@ -1,4 +1,5 @@
 import { Locator, Page, expect } from "@playwright/test";
+import 'dotenv/config';
 
 /**
  * Hudle Home page.
@@ -40,7 +41,7 @@ export class HudleHomePage {
     }
 
     async gotoHudleAcceptCookies(page: Page) {
-        await page.goto('https://www.hudl.com/en_gb/');
+        await page.goto(process.env.HOMEPAGE || '');
         await expect(this.cookiesSettings).toBeVisible();
         await expect(this.rejectAll).toBeVisible();
         await expect(this.acceptAll).toBeVisible();
