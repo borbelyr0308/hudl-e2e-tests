@@ -1,0 +1,21 @@
+{
+  "name": "huddle_login",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "hudle:all": "npx playwright test"
+  },
+  "keywords": [
+    "Hudle", 
+    "QA",
+    "Borbely Inc"
+  ],
+  "author": "Robert Borbely",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}
