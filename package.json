@@ -22,6 +22,8 @@
   "devDependencies": {
     "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.2",
+    "allure-commandline": "^2.32.0",
+    "allure-playwright": "3.0.7",
     "dotenv": "^16.4.7",
     "random-email": "^1.0.3",
     "typescript": "^5.7.2"

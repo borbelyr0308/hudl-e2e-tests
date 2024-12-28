@@ -98,7 +98,7 @@ test.describe('Authentication tests', () => {
 
     });
 
-    test.only('should be able to select Forgot Password', { tag: ['@auth', '@critical', '@negative'] }, async ({ page }) => {
+    test('should be able to select Forgot Password', { tag: ['@auth', '@critical', '@negative'] }, async ({ page }) => {
         const hudlHomePage = new HudlHomePage(page);
         const hudlLoginPage = new HudlLoginPage(page);
 

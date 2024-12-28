@@ -23,7 +23,11 @@ export default defineConfig({
   workers: process.env.CI ? 1 : 3,
   maxFailures: process.env.CI ? 3 : 6, // on the pipeline allow 3 failures and local 6 failures, this can be configurable
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [
+    ['html'],
+    ['allure-playwright']
+
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
