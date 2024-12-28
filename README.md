@@ -1,5 +1,5 @@
-# Test suite for Hudl Login tests (Extendable for future Hudl tests)
-🛠️ Tech Stack:
+## Test suite for Hudl Login tests (Extendable for future Hudl tests)
+## 🛠️ Tech Stack:
  - TypeScript
  - Playwright
  - HTML test report
@@ -16,20 +16,20 @@ Tests that could be considered:
 * Browser and Device testing
 * API Testing
 
-⚙️ Setup Instructions
+## ⚙️ Setup Instructions
 
-## Clone the project
+# Clone the project
 git clone https://github.com/borbelyr0308/hudle-e2e-tests.git
 
-## Install dependencies:
+# Install dependencies:
 Obtain a `.env` file from the author; this contains sensitive details like credentials which are never committed to GitHub.
 Run `npm i` to install all dependencies
 
-## Install playwright browsers
+# Install playwright browsers
 Run `npx playwright install` to install Playwrights' browser binaries
 
 
-🏃‍♂️ Execution: 
+## 🏃‍♂️ Execution: 
 Run `hudl:all` to execute all tests (headless as default: see config)
 Run `hudl:login` to execute just login tests
 Run `hudl:happy` to execute happy path tests
