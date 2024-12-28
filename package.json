@@ -9,7 +9,8 @@
     "hudl:negative": "npx playwright test --grep-invert @happy",
     "debug": "npx playwright test --debug",
     "ui": "npx playwright test --ui",
-    "codegen": "npx playwright codegen"
+    "codegen": "npx playwright codegen",
+    "allure:report": "allure generate ./allure-results --clean && allure open ./allure-report"
   },
   "keywords": [
     "Hudl",
