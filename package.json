@@ -1,18 +1,18 @@
 {
-  "name": "huddle_login",
+  "name": "hudl_login",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "hudle:all": "npx playwright test",
-    "hudle:login": "npx playwright test --grep @auth",
-    "hudle:happy": "npx playwright test --grep @happy",
-    "hudle:negative": "npx playwright test --grep-invert @happy",
+    "hudl:all": "npx playwright test",
+    "hudl:login": "npx playwright test --grep @auth",
+    "hudl:happy": "npx playwright test --grep @happy",
+    "hudl:negative": "npx playwright test --grep-invert @happy",
     "debug": "npx playwright test --debug",
     "ui": "npx playwright test --ui",
     "codegen": "npx playwright codegen"
   },
   "keywords": [
-    "Hudle",
+    "Hudl",
     "QA",
     "Borbely Inc"
   ],
@@ -23,6 +23,7 @@
     "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.2",
     "dotenv": "^16.4.7",
+    "random-email": "^1.0.3",
     "typescript": "^5.7.2"
   }
 }

@@ -10,7 +10,7 @@ import { Page, expect } from "@playwright/test";
  */
 export class ActionClassExample {
 
-    async gotoHudleAcceptCookies(page: Page) {
+    async gotoHudlAcceptCookies(page: Page) {
             await page.goto(process.env.HOMEPAGE || '');
             await expect(page.getByRole('button', { name: 'Cookies Settings' })).toBeVisible();
             await expect(page.getByRole('button', { name: 'Reject All' })).toBeVisible();
