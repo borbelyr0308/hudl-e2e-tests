@@ -51,6 +51,29 @@ test.describe('Authentication tests', () => {
         await expect(page.getByRole('link', { name: 'Home' })).toBeVisible();
     });
 
+    test('should be able to logout', { tag: ['@auth', '@critical', '@happy'] }, async ({ page }) => {
+      const hudlHomePage = new HudlHomePage(page);
+      const hudlLoginPage = new HudlLoginPage(page);
+      const hudlCreateAccountPage = new HudlCreateAccountPage(page);
+
+        // Navigate to HUDL.com          
+      await hudlHomePage.gotoHudlAcceptCookies(page);
+      await hudlHomePage.gotoLogin();
+
+        // Navigate to login page and enter valid login credentials        
+      await hudlLoginPage.gotoHudlLogin(page);
+      await hudlLoginPage.validLogin(page);
+      await hudlLoginPage.continueNextPage();
+
+        // Navigate to Account menu and logout 
+      await hudlCreateAccountPage.accountMenu();
+      await hudlLoginPage.logUserOut();     
+      
+        // Confirm User logged out from account       
+      await expect(page.getByRole('link', { name: 'Log in' })).toBeVisible();
+      await expect(page.getByTitle('Home')).toBeVisible();
+  });
+
     test('should show errors if email is blank', { tag: ['@auth', '@critical', '@negative'] }, async ({ page }) => {
         const hudlHomePage = new HudlHomePage(page);
         const hudlLoginPage = new HudlLoginPage(page);
@@ -151,7 +174,7 @@ test.describe('Authentication tests', () => {
 
     });        
 
-    test('should show error when email is not valid format', { tag: ['@auth', '@critical', '@happy'] }, async ({ page }) => {
+    test('should show error when email is not valid format', { tag: ['@auth', '@critical', '@negative'] }, async ({ page }) => {
         const hudlHomePage = new HudlHomePage(page);
         const hudlLoginPage = new HudlLoginPage(page);
 
@@ -202,7 +225,7 @@ test.describe('Authentication tests', () => {
         
     });
 
-    test('should inform user email address is already used', { tag: ['@auth', '@critical', '@happy'] }, async ({ page }) => {
+    test('should inform user email address is already used', { tag: ['@auth', '@critical', '@negative'] }, async ({ page }) => {
         const hudlHomePage = new HudlHomePage(page);
         const hudlLoginPage = new HudlLoginPage(page);
         const hudlCreateAccountPage = new HudlCreateAccountPage(page);
@@ -230,7 +253,7 @@ test.describe('Authentication tests', () => {
 
     });        
 
-    test('should inform user password contains data', { tag: ['@auth', '@critical', '@happy'] }, async ({ page }) => {
+    test('should inform user password contains data', { tag: ['@auth', '@critical', '@negative'] }, async ({ page }) => {
         const hudlHomePage = new HudlHomePage(page);
         const hudlLoginPage = new HudlLoginPage(page);
         const hudlCreateAccountPage = new HudlCreateAccountPage(page);

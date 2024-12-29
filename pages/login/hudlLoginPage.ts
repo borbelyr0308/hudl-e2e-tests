@@ -29,6 +29,7 @@ export class HudlLoginPage {
     readonly privacyPolicyLink: Locator;
     readonly termsOfServiceLink: Locator;
     readonly forgotPassword: Locator;
+    readonly logout: Locator;
 
 
 
@@ -55,6 +56,7 @@ export class HudlLoginPage {
         this.privacyPolicyLink = page.getByRole('link', { name: 'Privacy Policy' });
         this.termsOfServiceLink = page.getByRole('link', { name: 'Terms of Service' });
         this.forgotPassword = page.getByRole('link', { name: 'Forgot Password' });
+        this.logout = page.getByRole('link', { name: 'Log Out' });
 
     }
 
@@ -131,6 +133,10 @@ export class HudlLoginPage {
 
     async populateEmail(email: string) {
         await this.emailInputLoginPage.fill(email);
+    }
+
+    async logUserOut() {
+        await this.logout.click();
     }
 
     async userDataPassword(page: Page) {

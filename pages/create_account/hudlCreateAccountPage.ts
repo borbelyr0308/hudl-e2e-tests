@@ -80,6 +80,10 @@ export class HudlCreateAccountPage {
         await this.selectAccountMenu.click()
         await this.accountSettingsLink.click();
       }
+
+      async accountMenu() {
+        await this.selectAccountMenu.click()
+      }
     
       async resetPassword() {
         await this.passwordAndSecurity.click();

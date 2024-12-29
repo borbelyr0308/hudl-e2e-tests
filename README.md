@@ -36,6 +36,6 @@ Run `hudl:happy` to execute happy path tests
 Run `hudl:negative` to execute non-happy path tests
 Run `debug` to run a test (tag the test as test.only first) in debug mode
 Run `ui` to run tests in a headed UI format
-Run `allure:report` to run generate and open the Allure report
+Run `allure:report` run this after you ran the test to generate and open the Allure report 
 
 HINT: For demo/interview purposes, please run the UI script to see the tests running.
