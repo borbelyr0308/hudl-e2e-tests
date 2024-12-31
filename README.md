@@ -3,7 +3,6 @@
  - TypeScript
  - Playwright
  - HTML test report
- - VS Code
 
 Design Pattern:
  - Page Object Model

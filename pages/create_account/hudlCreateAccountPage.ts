@@ -2,7 +2,7 @@ import { Locator, Page, expect } from "@playwright/test";
 import 'dotenv/config';
 
 /**
- * Hudl Home page.
+ * Hudl Create Account.
  * 
  * @author Robert Borbely
  */
@@ -62,11 +62,14 @@ export class HudlCreateAccountPage {
         await this.createAccountPassword.fill(password);
       }
     
-      async togglePasswordVisibility() {
+      async togglePasswordOn() {
         await this.showPasswordButton.click();
-        await this.hidePasswordButton.click();
       }
     
+      async togglePasswordOff() {
+        await this.hidePasswordButton.click();
+      }
+
       async verifyPasswordCriteria() {
         await expect(this.passwordCriteria).toBeVisible();
         await expect(this.page.getByText('At least 8 characters')).toBeVisible();

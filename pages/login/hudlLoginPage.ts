@@ -8,7 +8,6 @@ import 'dotenv/config';
  */
 export class HudlLoginPage {
 
-    // TODO - Move locators into here
     readonly page: Page;
     readonly hudlLoginMenu: Locator;
     readonly wyscoutMenu: Locator;
@@ -99,7 +98,6 @@ export class HudlLoginPage {
     async emptyPassword(page: Page) {
         await this.enterEmail(page, process.env.RANDOM_USERNAME || '');
         await this.enterPassword(page, process.env.EMPTY_PASSWORD || '');
-        //await page.getByRole('button', { name: 'Continue' }).click();
     }
 
     async validLogin(page: Page) {
@@ -154,6 +152,13 @@ export class HudlLoginPage {
         await expect(page.getByLabel('Email')).toBeVisible();
         await expect(page.getByRole('button', { name: 'Continue' })).toBeVisible();
         await expect(page.getByRole('button', { name: 'Go Back' })).toBeVisible(); 
+    }
+
+    async pleaseFillThisFieldValidation(page: Page) {
+        const validationMessage = await page.locator('input[required]').evaluate(input => {
+            return (input as HTMLInputElement).validationMessage;
+        });
+        expect(validationMessage).toBe('Please fill in this field.');
     }
 
 }

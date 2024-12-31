@@ -84,7 +84,11 @@ test.describe('Authentication tests', () => {
 
           // Navigate to login page and leave email blank        
         await hudlLoginPage.gotoHudlLogin(page);
-        await hudlLoginPage.emptyEmailLogin(page);
+        await hudlLoginPage.continueNextPage();
+
+          // Confirm Please Fill in this field validation is visible   
+        await hudlLoginPage.pleaseFillThisFieldValidation(page);
+
 
     });
 
@@ -100,6 +104,9 @@ test.describe('Authentication tests', () => {
         await hudlLoginPage.gotoHudlLogin(page);
         await hudlLoginPage.emptyPassword(page);
         await hudlLoginPage.continueNextPage();
+
+          // Confirm Please Fill in this field validation is visible   
+        await hudlLoginPage.pleaseFillThisFieldValidation(page);
 
     });
 
@@ -165,7 +172,8 @@ test.describe('Authentication tests', () => {
         await hudlCreateAccountPage.fillPassword('T');
         await hudlCreateAccountPage.verifyPasswordCriteria();
         await hudlLoginPage.validPassword(page);
-        await hudlCreateAccountPage.togglePasswordVisibility();
+        await hudlCreateAccountPage.togglePasswordOn();
+        await hudlCreateAccountPage.togglePasswordOff();
         await hudlCreateAccountPage.verifyPasswordCriteria();
         await hudlLoginPage.continueNextPage();
 
