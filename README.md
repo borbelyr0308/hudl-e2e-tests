@@ -21,20 +21,20 @@ Tests that could be considered:
 git clone https://github.com/borbelyr0308/hudle-e2e-tests.git
 
 # Install dependencies:
-Obtain a `.env` file from the author; this contains sensitive details like credentials which are never committed to GitHub.
-Run `npm i` to install all dependencies
+* Obtain a `.env` file from the author; this contains sensitive details like credentials which are never committed to GitHub.
+* Run `npm i` to install all dependencies
 
 # Install playwright browsers
-Run `npx playwright install` to install Playwrights' browser binaries
+* Run `npx playwright install` to install Playwrights' browser binaries
 
 
 ## 🏃‍♂️ Execution: 
-Run `hudl:all` to execute all tests (headless as default: see config)
-Run `hudl:login` to execute just login tests
-Run `hudl:happy` to execute happy path tests
-Run `hudl:negative` to execute non-happy path tests
-Run `debug` to run a test (tag the test as test.only first) in debug mode
-Run `ui` to run tests in a headed UI format
-Run `allure:report` run this after you ran the test to generate and open the Allure report 
+* Run `hudl:all` to execute all tests (headless as default: see config)
+* Run `hudl:login` to execute just login tests
+* Run `hudl:happy` to execute happy path tests
+* Run `hudl:negative` to execute non-happy path tests
+* Run `debug` to run a test (tag the test as test.only first) in debug mode
+* Run `ui` to run tests in a headed UI format
+* Run `allure:report` run this after you ran the test to generate and open the Allure report 
 
 HINT: For demo/interview purposes, please run the UI script to see the tests running and once complete, ensure you run allure:report to generate the report.
