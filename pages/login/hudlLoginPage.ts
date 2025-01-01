@@ -158,7 +158,7 @@ export class HudlLoginPage {
         const validationMessage = await page.locator('input[required]').evaluate(input => {
             return (input as HTMLInputElement).validationMessage;
         });
-        expect(validationMessage).toBe('Please fill in this field.');
+        expect(validationMessage).toBe('Please fill out this field.');
     }
 
 }

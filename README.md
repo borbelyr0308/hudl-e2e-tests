@@ -37,4 +37,4 @@ Run `debug` to run a test (tag the test as test.only first) in debug mode
 Run `ui` to run tests in a headed UI format
 Run `allure:report` run this after you ran the test to generate and open the Allure report 
 
-HINT: For demo/interview purposes, please run the UI script to see the tests running.
+HINT: For demo/interview purposes, please run the UI script to see the tests running and once complete, ensure you run allure:report to generate the report.

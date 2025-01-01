@@ -123,7 +123,7 @@ test.describe('Authentication tests', () => {
         await hudlLoginPage.wrongPassword(page);
         await hudlLoginPage.continueNextPage();
         
-          // Confirm Validation message is visible        CHECK BEFORE AS Hudl LOGIN WEBSITE IS DOWN
+          // Confirm Validation message is visible
         await expect(page.getByText('Your email or password is')).toBeVisible();
 
     });
